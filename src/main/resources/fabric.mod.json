@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
   "id": "fabricloader",
-  "name": "Fabric Loader",
+  "name": "Fabric Mod Loader",
   "version": "${version}",
   "environment": "*",
-  "description": "The base mod loader.",
+  "description": "The base mod loader. Forked by FCWorkgroupMC to hook into modlauncher",
   "contact": {
-    "homepage": "https://fabricmc.net",
-    "irc": "irc://irc.esper.net:6667/fabric",
-    "issues": "https://github.com/FabricMC/fabric/issues",
-    "sources": "https://github.com/FabricMC/fabric"
+    "homepage": "https://github.com/FCWorkgroupMC/fabric-mod-loader",
+    "issues": "https://github.com/FCWorkgroupMC/fabric-mod-loader/issues",
+    "sources": "https://github.com/FCWorkgroupMC/fabric-mod-loader"
   },
   "license": "Apache-2.0",
   "icon": "assets/fabricloader/icon.png",
   "authors": [
-    "FabricMC"
+    "FabricMC", "FCWorkgroupMC"
   ]
 }

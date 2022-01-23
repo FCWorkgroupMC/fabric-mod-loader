@@ -19,7 +19,7 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = "fabric-loader"
+base.archivesName = "fabric-mod-loader" // FCWorkgroupMC - Project archive name change. Use extension instead of deprecated convention
 
 // Fetch build number from Jenkins
 def ENV = System.getenv()
@@ -27,6 +27,7 @@ def ENV = System.getenv()
 allprojects {
 	apply plugin: 'java-library'
 	apply plugin: 'eclipse'
+	apply plugin: 'idea' // FCWorkgroupMC - Apply idea plugin
 	apply plugin: 'checkstyle'
 
 	def constantsSource = rootProject.file("src/main/java/net/fabricmc/loader/impl/FabricLoaderImpl.java").text
@@ -136,8 +137,9 @@ task fatJar(type: ShadowJar, dependsOn: getSat4jAbout) {
 	from project(":minecraft").sourceSets.main.output
 	from getSat4jAbout.destinationDir
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
+		rename { "${it}_fabric-loader"}
 	}
+	from("LICENSE_fabric-mod-loader") // FCWorkgroupMC - Add our license
 
 	manifest {
 		attributes (
@@ -270,6 +272,7 @@ allprojects {
 
 		// Exclude gson since it is google's code, we just modify and bundle it
 		exclude '**/lib/gson/*.java'
+		exclude '**/group/forgecompatibility/f2c/loader/*.java' // FCWorkgroupMC - We have our own header
 	}
 }
 

@@ -1,6 +1,13 @@
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
+repositories { // FCWorkgroupMC - Add forge maven
+	maven {
+		name = 'forge'
+		url = 'https://maven.minecraftforge.net/'
+	}
+}
+
 dependencies {
 	api project(":")
 
@@ -14,6 +21,10 @@ dependencies {
 		transitive = false
 	}
 	//implementation 'net.sf.jopt-simple:jopt-simple:5.0.3'
+
+	api 'cpw.mods:modlauncher:8.0.9' // FCWorkgroupMC - Add modlauncher dependency
+	api 'net.minecraftforge:forge:1.16.5-36.2.+:launcher' // FCWorkgroupMC - Add fml dependency
+	api 'net.minecraftforge:forgespi:3.2.+' // FCWorkgroupMC - Add fml's dependency
 }
 
 sourceSets {

@@ -17,6 +17,7 @@
 !/gradlew.bat
 !/HEADER
 !/LICENSE
+!/LICENSE_fabric-mod-loader
 !/README.md
 !/settings.gradle
 !/proguard.conf
